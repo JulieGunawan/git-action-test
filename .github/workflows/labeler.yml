@@ -18,3 +18,4 @@ jobs:
           sync-labels: true
           pr-number: |
             1
+            2
