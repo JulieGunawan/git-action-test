@@ -13,13 +13,7 @@ jobs:
       - uses: actions/labeler@v4
         with:
           repo-token: ${{secrets.TOKEN_SECRET}}
-          # Add a label when contributor opens an issue or pull request
-          script: | 
-            if (github.event_name=="issue") {
-              await github.rest.issues.addLabels({
-              pr-number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels:["issues"]
-              });
-            }
+          configuration-path: ".github/workflows/labeler.yml"
+          dot: false
+          pr-number: |
+            1
