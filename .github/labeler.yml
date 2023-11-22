@@ -1,2 +1,3 @@
-deployment:
-- any: ['deployment/backend-stack/deployment.yaml']
+# Add 'label1' to any changes within 'example' folder or any subfolders
+label1:
+- .github/workflows/**
