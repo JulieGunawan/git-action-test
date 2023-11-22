@@ -12,22 +12,14 @@ jobs:
     steps:
       - uses: actions/labeler@v4
         with:
-          script: |
-            # Add a label when contributor opens an issue or pull request
-            if: contains(steps.label-the-PR.outputs.all-labels, 'frontend')
+          repo-token: ${{SECRET_TOKEN}}
+          # Add a label when contributor opens an issue or pull request
+          script: | 
             if (github.event_name=="issue") {
               await github.rest.issues.addLabels({
-              issue_number: context.issue.number,
+              pr-number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels:["issues"]
-            });
+              });
             }
-            if (github.event_name=="pull_request") {
-              await github.rest.issues.addLabels({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels:["pull request"]
-            });
-            }  
