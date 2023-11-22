@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/labeler@v4
         with:
-          repo-token: ${{TOKEN_SECRET}}
+          repo-token: ${{secrets.TOKEN_SECRET}}
           # Add a label when contributor opens an issue or pull request
           script: | 
             if (github.event_name=="issue") {
