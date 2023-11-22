@@ -13,7 +13,7 @@ jobs:
       - uses: actions/labeler@v4
         with:
           repo-token: ${{secrets.TOKEN_SECRET}}
-          configuration-path: ".github/workflows/labeler.yml"
+          configuration-path: "/.github/workflows/labeler.yml"
           dot: false
           pr-number: |
             1
