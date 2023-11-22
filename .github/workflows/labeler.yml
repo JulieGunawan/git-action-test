@@ -19,3 +19,4 @@ jobs:
           dot: false
           pr-number: |
             1
+            2
