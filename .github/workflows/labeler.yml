@@ -1,20 +1,10 @@
-name: label new contributor
+name: "Pull Request Labeler"
 
 on:
-  issues:
-    types: [opened]
   pull_request_target:
-    types: [opened]
 
 jobs:
   label:
     runs-on: ubuntu latest
     steps:
-      - uses: actions/checkout@v4
-      
       - uses: actions/labeler@v4
-        with:
-          repo-token: ${{secrets.TOKEN_SECRET}}  
-          sync-labels: true
-          pr-number: |
-            1
