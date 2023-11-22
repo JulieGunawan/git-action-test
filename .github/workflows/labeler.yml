@@ -16,8 +16,18 @@ jobs:
             # Add a label when contributor opens an issue or pull request
             if: contains(steps.label-the-PR.outputs.all-labels, 'frontend')
             if (github.event_name=="issue") {
-              core.setOutput('label', 'issue');
+              await github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels:["issues"]
+            });
             }
             if (github.event_name=="pull_request") {
-              core.setOutput('label', 'pull request');
+              await github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels:["pull request"]
+            });
             }  
