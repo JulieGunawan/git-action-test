@@ -8,14 +8,13 @@ on:
 
 jobs:
   label:
-    runs-on: ["contributor"]
+    runs-on: ubuntu latest
     steps:
       - uses: actions/checkout@v4
       
       - uses: actions/labeler@v4
         with:
-          repo-token: ${{secrets.TOKEN_SECRET}}
+          repo-token: ${{secrets.TOKEN_SECRET}}  
           sync-labels: true
-          dot: false
           pr-number: |
             1
