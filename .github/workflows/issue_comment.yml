@@ -19,4 +19,4 @@ jobs:
           body: |
             This is a multi-line comment
             - With GitHub **Markdown** :sparkles:
-            - Created by [create-or-update-comment][1]
+            - Created by [create-or-update-comment][3]
