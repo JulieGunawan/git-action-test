@@ -1,0 +1,19 @@
+name: "Pull Request Labeler"
+on:
+- pull_request_target
+
+jobs:
+  comment-with-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "dump github context"
+        run: echo '${{ to JSON(github.event) }}' | jq
+        shell: bash
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            This is a multi-line comment
+            - With GitHub **Markdown** :sparkles:
+            - Created by [create-or-update-comment]
