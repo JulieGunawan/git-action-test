@@ -1,6 +1,7 @@
-name: "Pull Request Labeler"
+name: "Issue Comment"
 on:
-- pull_request_target
+  issues:
+    types: [opened]
 
 jobs:
   comment-with-action:
