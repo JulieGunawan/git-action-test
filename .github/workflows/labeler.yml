@@ -9,4 +9,8 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
+    - name: "github context dump"
+      run: echo '${{ toJSON(github.event) }}' | jq
+      shell: bash
+      
     - uses: actions/labeler@v4
