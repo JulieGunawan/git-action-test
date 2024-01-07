@@ -13,4 +13,9 @@ jobs:
       run: echo '${{ toJSON(github.event) }}' | jq
       shell: bash
       
-    - uses: actions/labeler@v4
+    - uses: actions/labeler@v5
+      with:
+        pr-number: |
+          1
+          2
+          3
