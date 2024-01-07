@@ -16,6 +16,3 @@ jobs:
     - uses: actions/labeler@v5
       with:
         configuration-path: '.github/workflows/labeler.yml'
-        pr-number: |
-          1
-          2
