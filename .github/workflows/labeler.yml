@@ -13,7 +13,23 @@ jobs:
       run: echo '${{ toJSON(github.event) }}' | jq
       shell: bash
       
-    - uses: actions/labeler@v5
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        sync-labels: true
+    - name: Install GitHub CLI
+      run: |
+        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+        sudo apt-add-repository https://cli.github.com/packages
+        sudo apt update
+        sudo apt install gh
+    - name: "Assign label to PR"
+      if: ${{ github.event_name == 'issues' || github.event_name == 'pull_request_target' }}
+      run: 
+        if [[ "${{ github.event.issue }}" != "" ]]; then
+          echo "Labeling issue"
+          gh issue add-label "${{ github.event.issue.number }}" "new contributor"
+        elif [[ "${{ github.event.pull_request }}" != "" ]]; then
+          echo "Labeling pull request"
+          gh pr add-label "${{ github.event.pull_request.number }}" "new contributor"
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN_SECRET }}
+        OWNER: ${{ github.event.issue.user.login }}
+        REPO: ${{ github.event.repository.name }}
+        ISSUE_NUMBER: ${{ github.event.issue.number }}
