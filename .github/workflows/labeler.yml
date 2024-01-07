@@ -14,5 +14,3 @@ jobs:
       shell: bash
       
     - uses: actions/labeler@v5
-      with:
-        repo-token: "${{ secrets.TOKEN_SECRET }}"
