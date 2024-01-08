@@ -16,8 +16,6 @@ jobs:
       shell: bash
     - uses: actions/labeler@v5
       with:
-        pr-number: |
-          1
         repo-token: "${{ secrets.TOKEN_SECRET }}"
         sync-labels: true
         configuration-path: .github/labeler.yml
