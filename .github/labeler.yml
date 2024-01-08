@@ -1,2 +1,7 @@
+root:
+- changed-files:
+  - any-glob-to-any-file: '*'
+
 label1:
-- '**'
+- any-glob-to-any-file: '*'
+  - workflows/*
