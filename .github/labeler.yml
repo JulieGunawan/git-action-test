@@ -3,5 +3,5 @@ root:
   - any-glob-to-any-file: '*'
 
 label1:
-- changed-files:
+- changed-files: 
   - any-glob-to-any-file: 'workflows/*'
