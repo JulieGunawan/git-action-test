@@ -12,5 +12,13 @@ jobs:
     - name: "github context dump"
       run: echo '${{ toJSON(github.event) }}' | jq
       shell: bash
-      
     - uses: actions/labeler@v5
+      with:
+        repo-token: "${{ secrets.TOKEN_SECRET }}"
+      
+    
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN_SECRET }}
+        OWNER: ${{ github.event.issue.user.login }}
+        REPO: ${{ github.event.repository.name }}
+        ISSUE_NUMBER: ${{ github.event.issue.number }}
