@@ -17,9 +17,8 @@ jobs:
     - uses: actions/labeler@v5
       with:
         repo-token: "${{ secrets.TOKEN_SECRET }}"
-
-
-
+        sync-labels: true
+        
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_SECRET }}
         OWNER: ${{ github.event.issue.user.login }}
