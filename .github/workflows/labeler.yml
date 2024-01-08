@@ -18,8 +18,8 @@ jobs:
       with:
         repo-token: "${{ secrets.TOKEN_SECRET }}"
         sync-labels: true
-        configuration-path: .github/labeler.yml
-        dot: true
+        pr-number: |
+          1
     
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_SECRET }}
