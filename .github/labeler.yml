@@ -4,4 +4,5 @@ root:
 
 label1:
 - changed-files:
-  - any-glob-to-any-file: 'workflows/*'
+  - any-glob-to-any-file: 
+    - 'workflows/*'
