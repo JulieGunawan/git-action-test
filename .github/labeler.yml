@@ -1,5 +1,6 @@
 label1:
-- '**.*'
+- any: ['list', 'of', 'globs']
+  all: ['list', 'of', 'globs']
 
 root:
 - changed-files:
