@@ -18,9 +18,6 @@ jobs:
       with:
         repo-token: "${{ secrets.TOKEN_SECRET }}"
         sync-labels: true
-        pr-number: |
-          1
-          2
     
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_SECRET }}
