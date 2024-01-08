@@ -18,7 +18,8 @@ jobs:
       with:
         repo-token: "${{ secrets.TOKEN_SECRET }}"
         sync-labels: true
-        pr-number: ${{ github.event.pull_request.number }}
+        pr-number: |
+          1
     
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_SECRET }}
