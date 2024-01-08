@@ -1,8 +1,8 @@
 name: "Pull Request Labeler"
 on:
-  - issues
-  - issue_comment
-  - pull_request_target
+- pull_request_target
+- issues
+- issue_comment
 
 jobs:
   labeler:
@@ -17,11 +17,10 @@ jobs:
     - uses: actions/labeler@v5
       with:
         repo-token: "${{ secrets.TOKEN_SECRET }}"
-        sync-labels: true
-        
+      
+    
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_SECRET }}
         OWNER: ${{ github.event.issue.user.login }}
         REPO: ${{ github.event.repository.name }}
         ISSUE_NUMBER: ${{ github.event.issue.number }}
-        LABEL: ${{ github.event.issue.labels[0].name }}
