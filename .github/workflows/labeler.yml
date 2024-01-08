@@ -17,6 +17,8 @@ jobs:
     - uses: actions/labeler@v5
       with:
         repo-token: "${{ secrets.TOKEN_SECRET }}"
+        pr-number: |
+          1
     
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_SECRET }}
