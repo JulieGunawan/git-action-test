@@ -1,3 +1,7 @@
 root:
 - changed-files:
   - any-glob-to-any-file: '*'
+
+label1:
+- any: ['list', 'of', 'globs']
+  all: ['list', 'of', 'globs']
